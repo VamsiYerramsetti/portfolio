@@ -81,7 +81,7 @@ export default function Home() {
                         target="_blank"
                         rel="noreferrer"
                       >
-                        <Image src="/icons/linkedin.svg" alt="" width={16} height={16} />
+                        <Image src={process.env.NEXT_PUBLIC_BASE_PATH ? `${process.env.NEXT_PUBLIC_BASE_PATH}/icons/linkedin.svg` : "/icons/linkedin.svg"} alt="" width={16} height={16} />
                         <span className="underline decoration-[color:var(--stroke)] hover:decoration-[color:var(--accent)]">LinkedIn</span>
                       </a>
                       <a
@@ -90,14 +90,14 @@ export default function Home() {
                         target="_blank"
                         rel="noreferrer"
                       >
-                        <Image src="/icons/github.svg" alt="" width={16} height={16} />
+                        <Image src={process.env.NEXT_PUBLIC_BASE_PATH ? `${process.env.NEXT_PUBLIC_BASE_PATH}/icons/github.svg` : "/icons/github.svg"} alt="" width={16} height={16} />
                         <span className="underline decoration-[color:var(--stroke)] hover:decoration-[color:var(--accent)]">GitHub</span>
                       </a>
                       <a
                         className="inline-flex items-center gap-2 text-[color:var(--muted)] hover:text-[color:var(--ink)] transition"
                         href={`mailto:${site.links.email}`}
                       >
-                        <Image src="/icons/email.svg" alt="" width={16} height={16} />
+                        <Image src={process.env.NEXT_PUBLIC_BASE_PATH ? `${process.env.NEXT_PUBLIC_BASE_PATH}/icons/email.svg` : "/icons/email.svg"} alt="" width={16} height={16} />
                         <span className="underline decoration-[color:var(--stroke)] hover:decoration-[color:var(--accent)]">Email</span>
                       </a>
                       <a
@@ -106,7 +106,7 @@ export default function Home() {
                         target="_blank"
                         rel="noreferrer"
                       >
-                        <Image src="/icons/spotify.svg" alt="" width={16} height={16} />
+                        <Image src={process.env.NEXT_PUBLIC_BASE_PATH ? `${process.env.NEXT_PUBLIC_BASE_PATH}/icons/spotify.svg` : "/icons/spotify.svg"} alt="" width={16} height={16} />
                         <span className="underline decoration-[color:var(--stroke)] hover:decoration-[color:var(--accent)]">Playlist</span>
                       </a>
                     </div>
