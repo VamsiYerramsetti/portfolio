@@ -17,7 +17,7 @@ export default function Home() {
       <Nav />
 
       <section className="mx-auto max-w-6xl px-5 pt-16">
-        <div className="grid lg:grid-cols-[1.15fr_.85fr] gap-10 items-start">
+        <div className="grid gap-10 items-start lg:grid-cols-[1.15fr_.85fr] md:grid-cols-2 sm:grid-cols-1">
           <Reveal>
             <h1 className="font-display text-4xl sm:text-5xl tracking-tight leading-[1.05]">
               {site.role}
@@ -74,7 +74,7 @@ export default function Home() {
                   <div className="font-display text-xl">{site.name}</div>
                   <div className="text-sm text-[color:var(--muted)]">{site.location}</div>
                   <div className="mt-3 text-sm">
-                    <div className="grid grid-cols-2 gap-x-6 gap-y-2">
+                    <div className="grid grid-cols-2 gap-x-6 gap-y-2 sm:grid-cols-1 sm:gap-x-0">
                       <a
                         className="inline-flex items-center gap-2 text-[color:var(--muted)] hover:text-[color:var(--ink)] transition"
                         href={site.links.linkedin}
