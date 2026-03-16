@@ -63,7 +63,7 @@ export default function Home() {
                 {/* 👉 Replace this with your headshot: /public/images/headshot.jpg */}
                 <div className="h-36 w-36 sm:h-44 sm:w-44 rounded-2xl overflow-hidden border border-[color:var(--stroke)] bg-white/40">
                   <Image
-                    src="/images/headshot.png"
+                    src={process.env.NEXT_PUBLIC_BASE_PATH ? `${process.env.NEXT_PUBLIC_BASE_PATH}/images/headshot.png` : "/images/headshot.png"}
                     alt="Headshot"
                     width={384}
                     height={384}
