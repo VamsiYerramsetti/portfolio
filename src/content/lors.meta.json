@@ -2,11 +2,11 @@
 	"dr-prof-willem-lor": {
 		"order": 4,
 		"title": "LOR from Honours Academy of Science supervisor",
-		"blurb": "Honors Academy of Science of Radboud University",
+		"blurb": "Honors Academy of Science at Radboud University",
 		"person": {
 			"name": "Dr. Prof. Willem Velema",
 			"title": "Assistant Professor - Physical Organic Chemistry",
-			"company": "Principal Investigator of Velemalab",
+			"company": "Principal Investigator of Velemalab\nRadboud University Nijmegen",
 			"description": "",
 			"links": [
 				{ "label": "Website", "url": "https://www.ru.nl/personen/velema-w" }
@@ -41,11 +41,11 @@
 	"vamsi-recommendationletter-annemieke-general": {
 		"order": 3,
 		"title": "LOR from Talent Manager",
-		"blurb": "Rabobank North America",
+		"blurb": "Rabobank",
 		"person": {
-			"name": "Annemieke",
+			"name": "Annemieke Van Nuland",
 			"title": "Senior Talent Manager",
-			"company": "Rabobank North America",
+			"company": "Rabobank",
 			"description": "",
 			"links": [
 				{ "label": "LinkedIn", "url": "https://www.linkedin.com/in/avnuland/" }

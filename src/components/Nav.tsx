@@ -40,12 +40,12 @@ export function Nav() {
           {site.name}
         </Link>
         <nav className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-[color:var(--muted)]">
-          <a href="#experience" onClick={(e) => onNavClick(e, "#experience")} className="hover:text-[color:var(--ink)] transition">Work Experience</a>
-          <a href="#education" onClick={(e) => onNavClick(e, "#education")} className="hover:text-[color:var(--ink)] transition">Education</a>
-          <a href="#work" onClick={(e) => onNavClick(e, "#work")} className="hover:text-[color:var(--ink)] transition">Selected work</a>
-          <a href="#skills" onClick={(e) => onNavClick(e, "#skills")} className="hover:text-[color:var(--ink)] transition">Skillset</a>
-          <a href="#posts" onClick={(e) => onNavClick(e, "#posts")} className="hover:text-[color:var(--ink)] transition">Updates</a>
-          <a href="#contact" onClick={(e) => onNavClick(e, "#contact")} className="hover:text-[color:var(--ink)] transition">Contact</a>
+          <Link href="/#experience" className="hover:text-[color:var(--ink)] transition">Work Experience</Link>
+          <Link href="/#education" className="hover:text-[color:var(--ink)] transition">Education</Link>
+          <Link href="/#work" className="hover:text-[color:var(--ink)] transition">Selected work</Link>
+          <Link href="/#skills" className="hover:text-[color:var(--ink)] transition">Skillset</Link>
+          <Link href="/#posts" className="hover:text-[color:var(--ink)] transition">Updates</Link>
+          <Link href="/#contact" className="hover:text-[color:var(--ink)] transition">Contact</Link>
           <Link href="/lors" className="hover:text-[color:var(--ink)] transition">Letters of Recommendation</Link>
         </nav>
       </div>

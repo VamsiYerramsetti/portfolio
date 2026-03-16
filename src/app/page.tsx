@@ -135,7 +135,7 @@ export default function Home() {
                   LORs
                 </Link>
                 <a
-                  href="/CV%20.Vamsi.KY.pdf"
+                  href="/CV .Vamsi.KY.pdf"
                   download
                   target="_blank"
                   rel="noopener noreferrer"
