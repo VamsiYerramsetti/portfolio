@@ -702,7 +702,7 @@ export default async function ProjectDetail({ params }: { params: Promise<{ slug
                       className="relative w-full aspect-video overflow-hidden rounded-xl2 border border-[color:var(--stroke)] shadow-soft bg-[color:var(--surface)]"
                     >
                       <Image
-                        src={src}
+                        src={process.env.NEXT_PUBLIC_BASE_PATH ? `${process.env.NEXT_PUBLIC_BASE_PATH}${src}` : src}
                         alt={`Project media ${idx + 1}`}
                         fill
                         sizes="100vw"
