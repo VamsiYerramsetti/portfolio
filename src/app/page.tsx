@@ -74,7 +74,7 @@ export default function Home() {
                   <div className="font-display text-xl">{site.name}</div>
                   <div className="text-sm text-[color:var(--muted)]">{site.location}</div>
                   <div className="mt-3 text-sm">
-                    <div className="grid grid-cols-2 gap-x-6 gap-y-2 sm:grid-cols-1 sm:gap-x-0">
+                    <div className="grid grid-cols-2 gap-x-6 gap-y-2">
                       <a
                         className="inline-flex items-center gap-2 text-[color:var(--muted)] hover:text-[color:var(--ink)] transition"
                         href={site.links.linkedin}
