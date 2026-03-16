@@ -1,0 +1,10 @@
+node_modules
+.next
+out
+dist
+.DS_Store
+.env*
+
+# Auto-generated LORS outputs (built from "LORS for website/")
+public/lors/
+src/content/lors.generated.ts

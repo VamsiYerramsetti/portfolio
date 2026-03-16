@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #fbf7f0;
+  --surface: rgba(246, 239, 227, 0.75);
+  --ink: #1b1410;
+  --muted: rgba(27,20,16,.62);
+  --stroke: rgba(27,20,16,.14);
+  --accent: #b48b5c;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  color: var(--ink);
+  background: radial-gradient(1200px 600px at 20% 10%, rgba(180,139,92,.18), transparent 60%),
+              radial-gradient(900px 500px at 85% 20%, rgba(122,87,58,.14), transparent 60%),
+              var(--bg);
+  font-family: theme('fontFamily.body');
+}
+
+/* Subtle grain (luxury paper feel) */
+.grain::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.7' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='260' height='260' filter='url(%23n)' opacity='.22'/%3E%3C/svg%3E");
+  opacity: .06;
+  mix-blend-mode: multiply;
+}
+
+::selection {
+  background: rgba(180,139,92,.35);
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Better focus style */
+:focus-visible {
+  outline: 2px solid rgba(180,139,92,.55);
+  outline-offset: 3px;
+  border-radius: 10px;
+}

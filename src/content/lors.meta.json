@@ -1,0 +1,107 @@
+{
+	"dr-prof-willem-lor": {
+		"order": 4,
+		"title": "LOR from Honours Academy of Science supervisor",
+		"blurb": "Honors Academy of Science of Radboud University",
+		"person": {
+			"name": "Dr. Prof. Willem Velema",
+			"title": "Assistant Professor - Physical Organic Chemistry",
+			"company": "Principal Investigator of Velemalab",
+			"description": "",
+			"links": [
+				{ "label": "Website", "url": "https://www.ru.nl/personen/velema-w" }
+			]
+		}
+	},
+	"proof-of-internship-performance-report": {
+		"order": 1,
+		"title": "Computer vision research internship",
+		"blurb": "Ca' Foscari University",
+		"people": [
+			{
+				"name": "Dr. Prof. Marcello Pelillo",
+				"title": "FIEEE, FIAPR, FAAIA",
+				"company": "Professor of Computer Science · Ca’ Foscari University of Venice, Italy",
+				"description": "IEEE SMC Distinguished Lecturer. Specialty Chief Editor, Computer Vision - Frontiers in Computer Science.",
+				"links": [
+					{ "label": "Website", "url": "https://www.unive.it/data/people/5592849" }
+				]
+			},
+			{
+				"name": "Dr. Prof. Alessandro Torcinovich",
+				"title": "",
+				"company": "",
+				"description": "Assistant professor at the Free University of Bozen-Bolzano - Faculty of Engineering. Academic researcher at ETH Zürich - Institute for Machine Learning.",
+				"links": [
+					{ "label": "Website", "url": "https://www.aretor.it/" }
+				]
+			}
+		]
+	},
+	"vamsi-recommendationletter-annemieke-general": {
+		"order": 3,
+		"title": "LOR from Talent Manager",
+		"blurb": "Rabobank North America",
+		"person": {
+			"name": "Annemieke",
+			"title": "Senior Talent Manager",
+			"company": "Rabobank North America",
+			"description": "",
+			"links": [
+				{ "label": "LinkedIn", "url": "https://www.linkedin.com/in/avnuland/" }
+			]
+		}
+	},
+	"vamsi-performance-report-na-sustainability-team": {
+		"order": 2,
+		"title": "Rabo North American Sustainability platform project",
+		"people": [
+			{
+				"name": "Ryan Findlay",
+				"title": "Head of Sustainable Food and Agriculture",
+				"company": "Rabobank North America",
+				"description": "",
+				"links": [
+					{ "label": "LinkedIn", "url": "https://www.linkedin.com/in/ryanpfindlay/" }
+				]
+			},
+			{
+				"name": "Clay Metzger",
+				"title": "Senior Sustainaibility Policy and Risk Manager",
+				"company": "Rabobank North America",
+				"description": "",
+				"links": [
+					{ "label": "LinkedIn", "url": "https://www.linkedin.com/in/clay-metzger/" }
+				]
+			}
+		]
+	},
+	"laudatio-vamsi": {
+		"order": 5,
+		"kind": "Laudation",
+		"title": "Thesis laudation by thesis supervisor",
+		"blurb": "Data Science group at Radboud University",
+		"person": {
+			"name": "Dr.Prof Elena Marchiori",
+			"title": "Professor of Machine Learning",
+			"company": "Radboud University Nijmegen",
+			"description": "Head of the Data Science Group, Institute for Computing and Information Sciences (iCIS).",
+			"links": [
+				{ "label": "Website", "url": "https://www.cs.ru.nl/~elenam/" }
+			]
+		}
+	},
+	"lorr-s-s-team": {
+		"title": "Automated loan prospecting project",
+		"blurb": "Rabobank Startup and Scaleup (S&S)",
+		"person": {
+			"name": "Jos Van Zante",
+			"title": "Senior start up and scale up banker",
+			"company": "Rabobank",
+			"description": "",
+			"links": [
+				{ "label": "LinkedIn", "url": "https://www.linkedin.com/in/josvanzante/" }
+			]
+		}
+	}
+}
