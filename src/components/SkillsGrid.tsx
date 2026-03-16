@@ -202,7 +202,7 @@ export function SkillsGrid() {
                     <>
                       <div className="h-9 w-9 rounded-xl bg-white/40 border border-[color:var(--stroke)] flex items-center justify-center overflow-hidden">
                         <Image
-                          src={`/icons/${s.icon}`}
+                          src={process.env.NEXT_PUBLIC_BASE_PATH ? `${process.env.NEXT_PUBLIC_BASE_PATH}/icons/${s.icon}` : `/icons/${s.icon}`}
                           alt={s.label}
                           width={24}
                           height={24}
