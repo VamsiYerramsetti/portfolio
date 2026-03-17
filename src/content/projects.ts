@@ -22,6 +22,7 @@ export const projects: Project[] = [
       "Awarded most viable innovation (internal challenge)",
     ],
       media: [
+        "/project-media/code_compass.drawio.png||/project-media/code-compass-ui-screenshot.png",
         "https://www.linkedin.com/posts/vamsi-y_marathon-innovation-agenticai-ugcPost-7386053433939881985--RC7"
       ],
   },
@@ -52,7 +53,8 @@ export const projects: Project[] = [
       "Role: Product Owner & ML Engineer",
     ],
     media: [
-      "/project-media/LPscreenshot1.png||/project-media/LPscreenshot2.png"
+      "/project-media/LPscreenshot1.png||/project-media/LPscreenshot2.png",
+      "https://www.linkedin.com/posts/vamsi-y_datascience-financeinnovation-rabobank-activity-7315453093981106177-fHk6"
     ],
   },
   {
@@ -68,7 +70,8 @@ export const projects: Project[] = [
       "Positioned for mobile screening and multi-disease extension",
     ],
     media: [
-      "/project-media/BSc_Thesis_ATIA_Poster_Radboud.pdf||https://www.linkedin.com/posts/vamsi-y_machinelearning-deeplearning-research-activity-6973918596053745664-fNvN"
+      "/project-media/BSc_Thesis_ATIA_Poster_Radboud.pdf",
+      "https://www.linkedin.com/posts/vamsi-y_machinelearning-deeplearning-research-activity-6973918596053745664-fNvN"
     ],
   },
   {
