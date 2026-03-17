@@ -9,6 +9,7 @@
     "prebuild": "node scripts/generate-lors.mjs",
     "icons": "node scripts/generate-icons.mjs",
     "build": "npm run icons && next build",
+    "export": "next export",
     "start": "npx serve@latest out -l 3000",
     "lint": "next lint"
   },
