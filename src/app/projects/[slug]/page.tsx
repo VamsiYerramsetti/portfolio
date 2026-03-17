@@ -663,7 +663,10 @@ export default async function ProjectDetail({ params }: { params: Promise<{ slug
             <div className="mt-8">
               <h3 className="font-display text-xl">Media</h3>
               {isCodeCompass ? (
-                <LinkedInCarousel activityIds={["https://www.linkedin.com/posts/vamsi-y_marathon-innovation-agenticai-ugcPost-7386053433939881985--RC7"]} />
+                <LinkedInCarousel activityIds={[
+                  `${withBasePath("/project-media/code_compass.drawio.png")}||${withBasePath("/project-media/code-compass-ui-screenshot.png")}`,
+                  "https://www.linkedin.com/posts/vamsi-y_marathon-innovation-agenticai-ugcPost-7386053433939881985--RC7"
+                ]} />
               ) : (() => {
                 // Combine all media and LinkedIn embeds for other projects
                 const allMedia: string[] = [];
@@ -679,13 +682,6 @@ export default async function ProjectDetail({ params }: { params: Promise<{ slug
                 }
                 if (isOrganoidOnChip) {
                   allMedia.push("<iframe src=\"https://www.linkedin.com/embed/feed/update/urn:li:share:6808069220140621824?collapsed=1\" height=\"645\" width=\"504\" frameborder=\"0\" allowfullscreen=\"\" title=\"Embedded post\"></iframe>");
-                }
-                if (isATIA) {
-                  allMedia.push(withBasePath("/project-media/BSc_Thesis_ATIA_Poster_Radboud.pdf"));
-                }
-                if (isCodeCompass) {
-                  allMedia.push(withBasePath("/project-media/code_compass.drawio.png"));
-                  allMedia.push(withBasePath("/project-media/code-compass-ui-screenshot.png"));
                 }
                 if (isLoanProspecting) {
                   allMedia.push("https://www.linkedin.com/posts/vamsi-y_datascience-financeinnovation-rabobank-activity-7315453093981106177-fHk6");
