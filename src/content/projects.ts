@@ -52,7 +52,7 @@ export const projects: Project[] = [
       "Role: Product Owner & ML Engineer",
     ],
     media: [
-      "/project-media/LPscreenshot1.png||/project-media/LP screenshot2.png"
+      "/project-media/LPscreenshot1.png||/project-media/LPscreenshot2.png"
     ],
   },
   {
