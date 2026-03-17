@@ -634,6 +634,7 @@ export default async function ProjectDetail({ params }: { params: Promise<{ slug
               ))}
             </ul>
 
+            {/* Unified carousel for all media types, no duplicate rendering below */}
             <div className="mt-8">
               <h3 className="font-display text-xl">Media</h3>
               {(() => {
@@ -663,9 +664,7 @@ export default async function ProjectDetail({ params }: { params: Promise<{ slug
                   allMedia.push("https://www.linkedin.com/posts/vamsi-y_datascience-financeinnovation-rabobank-activity-7315453093981106177-fHk6");
                 }
                 return (
-                  <div className="mt-4">
-                    <LinkedInCarousel activityIds={allMedia} />
-                  </div>
+                  <LinkedInCarousel activityIds={allMedia} />
                 );
               })()}
             </div>
