@@ -135,7 +135,7 @@ export default function Home() {
                   LORs
                 </Link>
                 <a
-                  href="/CV .Vamsi.KY.pdf"
+                  href="/project-media/CV%20.Vamsi.Krishna.Y.pdf"
                   download
                   target="_blank"
                   rel="noopener noreferrer"
@@ -251,13 +251,12 @@ export default function Home() {
         <Reveal>
           <div className="rounded-xl2 border border-[color:var(--stroke)] bg-[color:var(--surface)] p-8 shadow-soft">
             <h2 className="font-display text-3xl tracking-tight">Let’s innovate</h2>
-                  <p className="mt-2 text-[color:var(--muted)]">Hit me up if you want to collaborate, swap ideas, or just say Hi. Always happy to chat 🙂</p>
             <div className="mt-6 flex flex-wrap gap-3">
               <a className="rounded-full border border-[color:var(--stroke)] bg-gradient-to-br from-[#f5e9da] to-[#e7d7c1] px-5 py-3 text-sm font-medium transition-all duration-700 hover:shadow-xl hover:bg-gradient-to-br hover:from-[#e7d7c1] hover:to-[#f5e9da] hover:text-[color:var(--ink)] hover:scale-110 hover:-translate-y-1 focus:scale-110 focus:-translate-y-1 active:scale-100" href={`mailto:${site.links.email}`}>Email me</a>
               <a className="rounded-full border border-[color:var(--stroke)] bg-gradient-to-br from-[#f5e9da] to-[#e7d7c1] px-5 py-3 text-sm font-medium transition-all duration-700 hover:shadow-xl hover:bg-gradient-to-br hover:from-[#e7d7c1] hover:to-[#f5e9da] hover:text-[color:var(--ink)] hover:scale-110 hover:-translate-y-1 focus:scale-110 focus:-translate-y-1 active:scale-100" href={site.links.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
               <a className="rounded-full border border-[color:var(--stroke)] bg-gradient-to-br from-[#f5e9da] to-[#e7d7c1] px-5 py-3 text-sm font-medium transition-all duration-700 hover:shadow-xl hover:bg-gradient-to-br hover:from-[#e7d7c1] hover:to-[#f5e9da] hover:text-[color:var(--ink)] hover:scale-110 hover:-translate-y-1 focus:scale-110 focus:-translate-y-1 active:scale-100" href={site.links.github} target="_blank" rel="noreferrer">GitHub</a>
               <a
-                href="/CV%20.Vamsi.KY.pdf"
+                href="/project-media/CV%20.Vamsi.Krishna.Y.pdf"
                 download
                 target="_blank"
                 rel="noopener noreferrer"
