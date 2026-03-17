@@ -3,7 +3,7 @@ import Image from "next/image";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import { Reveal } from "@/components/Reveal";
-import { lors } from "../../content/lors.generated";
+import { lors } from "./lors.generated";
 import { withBasePath } from "@/content/basePath";
 
 const initialFromName = (name?: string) => {
