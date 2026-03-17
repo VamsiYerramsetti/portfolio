@@ -106,13 +106,33 @@ export function LinkedInCarousel({ activityIds }: { activityIds: string[] }) {
   const [index, setIndex] = useState(0);
   const [maxEmbedHeight, setMaxEmbedHeight] = useState(520);
 
+  // Debug: Log incoming media
+  useEffect(() => {
+    // eslint-disable-next-line no-console
+    console.log("LinkedInCarousel media:", activityIds);
+  }, [activityIds]);
+
   const slides = useMemo(
-    () => activityIds.map((id) => ({
-      id: keyFor(id),
-      src: toEmbedSrc(id),
-      height: parseIframeAttrs(id).height,
-      title: parseIframeAttrs(id).title,
-    })),
+    () => activityIds.map((id) => {
+      const src = toEmbedSrc(id);
+      const type = isImageSrc(src)
+        ? "image"
+        : isPdfSrc(src)
+        ? "pdf"
+        : src.includes("linkedin.com/embed/feed/update")
+        ? "linkedin"
+        : "other";
+      // Debug: Log each slide
+      // eslint-disable-next-line no-console
+      console.log(`Slide:`, { id, src, type });
+      return {
+        id: keyFor(id),
+        src,
+        height: parseIframeAttrs(id).height,
+        title: parseIframeAttrs(id).title,
+        type,
+      };
+    }),
     [activityIds]
   );
 
@@ -149,7 +169,7 @@ export function LinkedInCarousel({ activityIds }: { activityIds: string[] }) {
   return (
     <div className="rounded-xl2 border border-[color:var(--stroke)] bg-[color:var(--surface)] shadow-soft overflow-hidden">
       <div className="flex items-center justify-between px-5 py-4 border-b border-[color:var(--stroke)]">
-          <div />
+        <div />
         <div className="flex gap-1">
           {slides.map((s, i) => (
             <button
@@ -189,7 +209,7 @@ export function LinkedInCarousel({ activityIds }: { activityIds: string[] }) {
                   ))}
                 </div>
               </div>
-            ) : isImageSrc(current.src) ? (
+            ) : current.type === "image" ? (
               <div className="relative w-full bg-[color:var(--surface)]" style={{ height: slideHeight }}>
                 <Image
                   src={current.src}
@@ -200,10 +220,20 @@ export function LinkedInCarousel({ activityIds }: { activityIds: string[] }) {
                   unoptimized
                 />
               </div>
+            ) : current.type === "pdf" ? (
+              <iframe
+                src={current.src}
+                title={current.title ?? `PDF ${index + 1}`}
+                className="w-full"
+                style={{ height: Math.min(current.height ?? 580, maxEmbedHeight) }}
+                frameBorder={0}
+                allowFullScreen
+                loading="lazy"
+              />
             ) : (
               <iframe
                 src={current.src}
-                title={current.title ?? (isPdfSrc(current.src) ? `PDF ${index + 1}` : `LinkedIn post ${index + 1}`)}
+                title={current.title ?? `LinkedIn post ${index + 1}`}
                 className="w-full"
                 style={{ height: Math.min(current.height ?? 580, maxEmbedHeight) }}
                 frameBorder={0}
