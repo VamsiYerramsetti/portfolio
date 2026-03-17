@@ -636,83 +636,38 @@ export default async function ProjectDetail({ params }: { params: Promise<{ slug
 
             <div className="mt-8">
               <h3 className="font-display text-xl">Media</h3>
-              {isNorthAmericaSustainability && (
-                <div className="mt-4">
-                  <LinkedInCarousel
-                    activityIds={[
-                      "7211407218154332163",
-                      "7220356729732038657",
-                    ]}
-                  />
-                </div>
-              )}
-              {isOrganoidOnChip && (
-                <div className="mt-4">
-                  <LinkedInCarousel
-                    activityIds={[
-                      "<iframe src=\"https://www.linkedin.com/embed/feed/update/urn:li:share:6808069220140621824?collapsed=1\" height=\"645\" width=\"504\" frameborder=\"0\" allowfullscreen=\"\" title=\"Embedded post\"></iframe>",
-                    ]}
-                  />
-                </div>
-              )}
-              {isCodeCompass && (
-                <div className="mt-4">
-                  <LinkedInCarousel
-                    activityIds={[
-                      "/project-media/code-compass-ui-screenshot.png||/project-media/code_compass.drawio.png",
-                      "https://www.linkedin.com/posts/vamsi-y_marathon-innovation-agenticai-ugcPost-7386053433939881985--RC7",
-                    ]}
-                  />
-                </div>
-              )}
-              {isATIA && (
-                <div className="mt-4">
-                  <LinkedInCarousel
-                    activityIds={[
-                      "/project-media/BSc_Thesis_ATIA_Poster_Radboud.pdf",
-                      "https://www.linkedin.com/posts/vamsi-y_machinelearning-deeplearning-research-activity-6973918596053745664-fNvN",
-                    ]}
-                  />
-                </div>
-              )}
-              {isUKAccident && (
-                <div className="mt-4">
-                  <LinkedInCarousel
-                    activityIds={[
-                      "/project-media/Data%20Mining%20Final%20Report-G4.pdf",
-                    ]}
-                  />
-                </div>
-              )}
-              {isLoanProspecting && (
-                <div className="mt-4">
-                  <LinkedInCarousel
-                    activityIds={[
-                      "/project-media/LPscreenshot1.png||/project-media/LP%20screenshot2.png",
-                      "https://www.linkedin.com/posts/vamsi-y_datascience-financeinnovation-rabobank-activity-7315453093981106177-fHk6",
-                    ]}
-                  />
-                </div>
-              )}
-              {project.media && project.media.length > 0 && !isCodeCompass && (
-                <div className="mt-4 space-y-4">
-                  {project.media.map((src: string, idx: number) => (
-                    <div
-                      key={`${src}-${idx}`}
-                      className="relative w-full aspect-video overflow-hidden rounded-xl2 border border-[color:var(--stroke)] shadow-soft bg-[color:var(--surface)]"
-                    >
-                      <Image
-                        src={process.env.NEXT_PUBLIC_BASE_PATH ? `${process.env.NEXT_PUBLIC_BASE_PATH}${src}` : src}
-                        alt={`Project media ${idx + 1}`}
-                        fill
-                        sizes="100vw"
-                        className="object-contain"
-                        unoptimized
-                      />
-                    </div>
-                  ))}
-                </div>
-              )}
+              {(() => {
+                // Combine all media and LinkedIn embeds
+                const allMedia: string[] = [];
+                if (project.media && project.media.length > 0) {
+                  project.media.forEach((item) => {
+                    item.split("||").forEach((src) => {
+                      allMedia.push(src.trim());
+                    });
+                  });
+                }
+                // Add hardcoded LinkedIn embeds for each project
+                if (isNorthAmericaSustainability) {
+                  allMedia.push("7211407218154332163", "7220356729732038657");
+                }
+                if (isOrganoidOnChip) {
+                  allMedia.push("<iframe src=\"https://www.linkedin.com/embed/feed/update/urn:li:share:6808069220140621824?collapsed=1\" height=\"645\" width=\"504\" frameborder=\"0\" allowfullscreen=\"\" title=\"Embedded post\"></iframe>");
+                }
+                if (isCodeCompass) {
+                  allMedia.push("https://www.linkedin.com/posts/vamsi-y_marathon-innovation-agenticai-ugcPost-7386053433939881985--RC7");
+                }
+                if (isATIA) {
+                  allMedia.push("https://www.linkedin.com/posts/vamsi-y_machinelearning-deeplearning-research-activity-6973918596053745664-fNvN");
+                }
+                if (isLoanProspecting) {
+                  allMedia.push("https://www.linkedin.com/posts/vamsi-y_datascience-financeinnovation-rabobank-activity-7315453093981106177-fHk6");
+                }
+                return (
+                  <div className="mt-4">
+                    <LinkedInCarousel activityIds={allMedia} />
+                  </div>
+                );
+              })()}
             </div>
           </aside>
         </div>
