@@ -65,7 +65,11 @@ export const projects: Project[] = [
       "Achieved a 9/10 thesis grade (top 2% percentile)",
       "Positioned for mobile screening and multi-disease extension",
     ],
-    media: [],
+    media: [
+      "/BSc_Thesis_ATIA_Poster_Radboud.pdf",
+      "/LPscreenshot1.png",
+      "/LP screenshot2.png"
+    ],
   },
   {
     slug: "uk-accident-prone-zone-detector",
