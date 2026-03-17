@@ -492,9 +492,33 @@ export default async function ProjectDetail({ params }: { params: Promise<{ slug
 
             <h3 className="mt-6 font-display text-xl">Outcome</h3>
             {isCodeCompass ? (
-              <p className="mt-3 text-[color:var(--muted)] leading-relaxed">
-                Code Compass AI delivered repository-wide semantic search, context-aware explanations, and persona-based guidance. It improved onboarding speed, code discoverability, and developer productivity. The privacy-first design ensured compliance, and the project was awarded “most viable innovation” in an internal challenge.
-              </p>
+              <>
+                <p className="mt-3 text-[color:var(--muted)] leading-relaxed">
+                  Code Compass AI delivered repository-wide semantic search, context-aware explanations, and persona-based guidance. It improved onboarding speed, code discoverability, and developer productivity. The privacy-first design ensured compliance, and the project was awarded “most viable innovation” in an internal challenge.
+                </p>
+                <div className="mt-6 flex flex-col sm:flex-row gap-4 items-stretch">
+                  <div className="relative flex-1 min-w-[220px] h-[320px] bg-[color:var(--surface)] rounded-xl overflow-hidden border border-[color:var(--stroke)]">
+                    <Image
+                      src="/project-media/code_compass.drawio.png"
+                      alt="Code Compass AI architecture diagram"
+                      fill
+                      sizes="(min-width: 640px) 50vw, 100vw"
+                      className="object-contain"
+                      unoptimized
+                    />
+                  </div>
+                  <div className="relative flex-1 min-w-[220px] h-[320px] bg-[color:var(--surface)] rounded-xl overflow-hidden border border-[color:var(--stroke)]">
+                    <Image
+                      src="/project-media/code-compass-ui-screenshot.png"
+                      alt="Code Compass AI UI screenshot"
+                      fill
+                      sizes="(min-width: 640px) 50vw, 100vw"
+                      className="object-contain"
+                      unoptimized
+                    />
+                  </div>
+                </div>
+              </>
             ) : isNorthAmericaSustainability ? (
               <p className="mt-3 text-[color:var(--muted)] leading-relaxed">
                 Reduced per‑client scoring from ~30 minutes to ~5 minutes, eliminating 350+ hours of manual effort across 100+ clients. Improved accuracy and auditability, and delivered portfolio‑level insights via dashboards for faster, higher‑quality sustainability advisory.
@@ -637,8 +661,10 @@ export default async function ProjectDetail({ params }: { params: Promise<{ slug
             {/* Unified carousel for all media types, no duplicate rendering below */}
             <div className="mt-8">
               <h3 className="font-display text-xl">Media</h3>
-              {(() => {
-                // Combine all media and LinkedIn embeds
+              {isCodeCompass ? (
+                <LinkedInCarousel activityIds={["https://www.linkedin.com/posts/vamsi-y_marathon-innovation-agenticai-ugcPost-7386053433939881985--RC7"]} />
+              ) : (() => {
+                // Combine all media and LinkedIn embeds for other projects
                 const allMedia: string[] = [];
                 if (project.media && project.media.length > 0) {
                   project.media.forEach((item) => {
@@ -647,15 +673,11 @@ export default async function ProjectDetail({ params }: { params: Promise<{ slug
                     });
                   });
                 }
-                // Add hardcoded LinkedIn embeds for each project
                 if (isNorthAmericaSustainability) {
                   allMedia.push("7211407218154332163", "7220356729732038657");
                 }
                 if (isOrganoidOnChip) {
                   allMedia.push("<iframe src=\"https://www.linkedin.com/embed/feed/update/urn:li:share:6808069220140621824?collapsed=1\" height=\"645\" width=\"504\" frameborder=\"0\" allowfullscreen=\"\" title=\"Embedded post\"></iframe>");
-                }
-                if (isCodeCompass) {
-                  allMedia.push("https://www.linkedin.com/posts/vamsi-y_marathon-innovation-agenticai-ugcPost-7386053433939881985--RC7");
                 }
                 if (isATIA) {
                   allMedia.push("https://www.linkedin.com/posts/vamsi-y_machinelearning-deeplearning-research-activity-6973918596053745664-fNvN");

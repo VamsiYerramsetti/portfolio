@@ -21,9 +21,9 @@ export const projects: Project[] = [
       "Markdown-to-HTML rendering with copyable code blocks",
       "Awarded most viable innovation (internal challenge)",
     ],
-    media: [
-      "/project-media/code_compass.drawio.png"
-    ],
+      media: [
+        "https://www.linkedin.com/posts/vamsi-y_marathon-innovation-agenticai-ugcPost-7386053433939881985--RC7"
+      ],
   },
   {
     slug: "north-american-sustainability-platform",
