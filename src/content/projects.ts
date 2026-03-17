@@ -51,7 +51,9 @@ export const projects: Project[] = [
       "Presented live at Data Science in Finance Conference (DSFC 2025)",
       "Role: Product Owner & ML Engineer",
     ],
-    media: [],
+    media: [
+      "/project-media/LPscreenshot1.png||/project-media/LP screenshot2.png"
+    ],
   },
   {
     slug: "atia-tongue-image-analysis",
@@ -66,9 +68,7 @@ export const projects: Project[] = [
       "Positioned for mobile screening and multi-disease extension",
     ],
     media: [
-      "/BSc_Thesis_ATIA_Poster_Radboud.pdf",
-      "/LPscreenshot1.png",
-      "/LP screenshot2.png"
+      "/project-media/BSc_Thesis_ATIA_Poster_Radboud.pdf||https://www.linkedin.com/posts/vamsi-y_machinelearning-deeplearning-research-activity-6973918596053745664-fNvN"
     ],
   },
   {

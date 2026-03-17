@@ -135,7 +135,7 @@ export default function Home() {
                   LORs
                 </Link>
                 <a
-                  href="/CV_Vamsi_Krishna_Y.pdf"
+                  href="/project-media/CV_Vamsi_Krishna_Y.pdf"
                   download
                   target="_blank"
                   rel="noopener noreferrer"
@@ -256,7 +256,7 @@ export default function Home() {
               <a className="rounded-full border border-[color:var(--stroke)] bg-gradient-to-br from-[#f5e9da] to-[#e7d7c1] px-5 py-3 text-sm font-medium transition-all duration-700 hover:shadow-xl hover:bg-gradient-to-br hover:from-[#e7d7c1] hover:to-[#f5e9da] hover:text-[color:var(--ink)] hover:scale-110 hover:-translate-y-1 focus:scale-110 focus:-translate-y-1 active:scale-100" href={site.links.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
               <a className="rounded-full border border-[color:var(--stroke)] bg-gradient-to-br from-[#f5e9da] to-[#e7d7c1] px-5 py-3 text-sm font-medium transition-all duration-700 hover:shadow-xl hover:bg-gradient-to-br hover:from-[#e7d7c1] hover:to-[#f5e9da] hover:text-[color:var(--ink)] hover:scale-110 hover:-translate-y-1 focus:scale-110 focus:-translate-y-1 active:scale-100" href={site.links.github} target="_blank" rel="noreferrer">GitHub</a>
               <a
-                href="/project-media/CV%20.Vamsi.Krishna.Y.pdf"
+                  href="/project-media/CV_Vamsi_Krishna_Y.pdf"
                 download
                 target="_blank"
                 rel="noopener noreferrer"
