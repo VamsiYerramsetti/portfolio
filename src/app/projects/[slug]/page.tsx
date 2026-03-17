@@ -662,13 +662,7 @@ export default async function ProjectDetail({ params }: { params: Promise<{ slug
             {/* Unified carousel for all media types, no duplicate rendering below */}
             <div className="mt-8">
               <h3 className="font-display text-xl">Media</h3>
-              {isCodeCompass ? (
-                <LinkedInCarousel activityIds={[
-                  `${withBasePath("/project-media/code_compass.drawio.png")}||${withBasePath("/project-media/code-compass-ui-screenshot.png")}`,
-                  "https://www.linkedin.com/posts/vamsi-y_marathon-innovation-agenticai-ugcPost-7386053433939881985--RC7"
-                ]} />
-              ) : (() => {
-                // Combine all media and LinkedIn embeds for other projects
+              {(() => {
                 const allMedia: string[] = [];
                 if (project.media && project.media.length > 0) {
                   project.media.forEach((item) => {
