@@ -82,7 +82,7 @@ export const projects: Project[] = [
       "DBSCAN and a custom density-ranking K-means method converged on 7 stable hotspots",
       "Achieved a 9/10 project grade",
     ],
-    media: [],
+    media: ["/project-media/Data Mining Final Report-G4.pdf"],
   },
   {
     slug: "organoid-on-chip-immunotherapy",
