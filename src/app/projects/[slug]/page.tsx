@@ -493,33 +493,9 @@ export default async function ProjectDetail({ params }: { params: Promise<{ slug
 
             <h3 className="mt-6 font-display text-xl">Outcome</h3>
             {isCodeCompass ? (
-              <>
-                <p className="mt-3 text-[color:var(--muted)] leading-relaxed">
-                  Code Compass AI delivered repository-wide semantic search, context-aware explanations, and persona-based guidance. It improved onboarding speed, code discoverability, and developer productivity. The privacy-first design ensured compliance, and the project was awarded “most viable innovation” in an internal challenge.
-                </p>
-                <div className="mt-6 flex flex-col sm:flex-row gap-4 items-stretch">
-                  <div className="relative flex-1 min-w-[220px] h-[320px] bg-[color:var(--surface)] rounded-xl overflow-hidden border border-[color:var(--stroke)]">
-                    <Image
-                      src={withBasePath("/project-media/code_compass.drawio.png")}
-                      alt="Code Compass AI architecture diagram"
-                      fill
-                      sizes="(min-width: 640px) 50vw, 100vw"
-                      className="object-contain"
-                      unoptimized
-                    />
-                  </div>
-                  <div className="relative flex-1 min-w-[220px] h-[320px] bg-[color:var(--surface)] rounded-xl overflow-hidden border border-[color:var(--stroke)]">
-                    <Image
-                      src={withBasePath("/project-media/code-compass-ui-screenshot.png")}
-                      alt="Code Compass AI UI screenshot"
-                      fill
-                      sizes="(min-width: 640px) 50vw, 100vw"
-                      className="object-contain"
-                      unoptimized
-                    />
-                  </div>
-                </div>
-              </>
+              <p className="mt-3 text-[color:var(--muted)] leading-relaxed">
+                Code Compass AI delivered repository-wide semantic search, context-aware explanations, and persona-based guidance. It improved onboarding speed, code discoverability, and developer productivity. The privacy-first design ensured compliance, and the project was awarded “most viable innovation” in an internal challenge.
+              </p>
             ) : isNorthAmericaSustainability ? (
               <p className="mt-3 text-[color:var(--muted)] leading-relaxed">
                 Reduced per‑client scoring from ~30 minutes to ~5 minutes, eliminating 350+ hours of manual effort across 100+ clients. Improved accuracy and auditability, and delivered portfolio‑level insights via dashboards for faster, higher‑quality sustainability advisory.
@@ -665,20 +641,35 @@ export default async function ProjectDetail({ params }: { params: Promise<{ slug
               {(() => {
                 const allMedia: string[] = [];
                 if (project.media && project.media.length > 0) {
-                  project.media.forEach((item) => {
-                    item.split("||").forEach((src) => {
-                      allMedia.push(src.trim());
+                  if ((isCodeCompass || isLoanProspecting) && project.media.length > 0) {
+                    // First slide: stacked images (joined by '||'), ensure withBasePath for each image
+                    const stacked = project.media[0]
+                      .split('||')
+                      .map((src) => withBasePath(src.trim()))
+                      .join('||');
+                    allMedia.push(stacked);
+                    // Remaining slides (e.g., LinkedIn)
+                    for (let i = 1; i < project.media.length; i++) {
+                      allMedia.push(project.media[i]);
+                    }
+                  } else {
+                    project.media.forEach((item) => {
+                      item.split("||").forEach((src) => {
+                        // Only apply withBasePath to local images or PDFs
+                        if (src.trim().startsWith("/")) {
+                          allMedia.push(withBasePath(src.trim()));
+                        } else {
+                          allMedia.push(src.trim());
+                        }
+                      });
                     });
-                  });
+                  }
                 }
                 if (isNorthAmericaSustainability) {
                   allMedia.push("7211407218154332163", "7220356729732038657");
                 }
                 if (isOrganoidOnChip) {
                   allMedia.push("<iframe src=\"https://www.linkedin.com/embed/feed/update/urn:li:share:6808069220140621824?collapsed=1\" height=\"645\" width=\"504\" frameborder=\"0\" allowfullscreen=\"\" title=\"Embedded post\"></iframe>");
-                }
-                if (isLoanProspecting) {
-                  allMedia.push("https://www.linkedin.com/posts/vamsi-y_datascience-financeinnovation-rabobank-activity-7315453093981106177-fHk6");
                 }
                 return (
                   <LinkedInCarousel activityIds={allMedia} />
