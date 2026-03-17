@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { withBasePath } from "@/content/basePath";
 import { notFound } from "next/navigation";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
@@ -167,7 +168,7 @@ export default async function ProjectDetail({ params }: { params: Promise<{ slug
 
                     <div className="pt-3">
                       <a
-                        href="/project-media/BSc_Thesis_ATIA_Poster_Radboud.pdf"
+                        href={withBasePath("/project-media/BSc_Thesis_ATIA_Poster_Radboud.pdf")}
                         target="_blank"
                         rel="noreferrer"
                         className="inline-flex items-center px-3 py-1 rounded bg-[color:var(--surface)] text-[color:var(--muted)] text-[12px] font-medium border border-[color:var(--stroke)] hover:bg-white/30 transition"
@@ -499,7 +500,7 @@ export default async function ProjectDetail({ params }: { params: Promise<{ slug
                 <div className="mt-6 flex flex-col sm:flex-row gap-4 items-stretch">
                   <div className="relative flex-1 min-w-[220px] h-[320px] bg-[color:var(--surface)] rounded-xl overflow-hidden border border-[color:var(--stroke)]">
                     <Image
-                      src="/project-media/code_compass.drawio.png"
+                      src={withBasePath("/project-media/code_compass.drawio.png")}
                       alt="Code Compass AI architecture diagram"
                       fill
                       sizes="(min-width: 640px) 50vw, 100vw"
@@ -509,7 +510,7 @@ export default async function ProjectDetail({ params }: { params: Promise<{ slug
                   </div>
                   <div className="relative flex-1 min-w-[220px] h-[320px] bg-[color:var(--surface)] rounded-xl overflow-hidden border border-[color:var(--stroke)]">
                     <Image
-                      src="/project-media/code-compass-ui-screenshot.png"
+                      src={withBasePath("/project-media/code-compass-ui-screenshot.png")}
                       alt="Code Compass AI UI screenshot"
                       fill
                       sizes="(min-width: 640px) 50vw, 100vw"
@@ -680,7 +681,11 @@ export default async function ProjectDetail({ params }: { params: Promise<{ slug
                   allMedia.push("<iframe src=\"https://www.linkedin.com/embed/feed/update/urn:li:share:6808069220140621824?collapsed=1\" height=\"645\" width=\"504\" frameborder=\"0\" allowfullscreen=\"\" title=\"Embedded post\"></iframe>");
                 }
                 if (isATIA) {
-                  allMedia.push("https://www.linkedin.com/posts/vamsi-y_machinelearning-deeplearning-research-activity-6973918596053745664-fNvN");
+                  allMedia.push(withBasePath("/project-media/BSc_Thesis_ATIA_Poster_Radboud.pdf"));
+                }
+                if (isCodeCompass) {
+                  allMedia.push(withBasePath("/project-media/code_compass.drawio.png"));
+                  allMedia.push(withBasePath("/project-media/code-compass-ui-screenshot.png"));
                 }
                 if (isLoanProspecting) {
                   allMedia.push("https://www.linkedin.com/posts/vamsi-y_datascience-financeinnovation-rabobank-activity-7315453093981106177-fHk6");
