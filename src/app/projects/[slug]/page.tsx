@@ -168,7 +168,7 @@ export default async function ProjectDetail({ params }: { params: Promise<{ slug
 
                     <div className="pt-3">
                       <a
-                        href={withBasePath("/project-media/BSc_Thesis_ATIA_Poster_Radboud.pdf")}
+                        href="https://www.cs.ru.nl/bachelors-theses/2022/Vamsi_Yerramsetti___1032599___ATIA_-_Automated_Tongue_Image_Analysis_for_autoimmune_disease_detection_with_supervised_machine_learning_models.pdf"
                         target="_blank"
                         rel="noreferrer"
                         className="inline-flex items-center px-3 py-1 rounded bg-[color:var(--surface)] text-[color:var(--muted)] text-[12px] font-medium border border-[color:var(--stroke)] hover:bg-white/30 transition"
